@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Works - TwoLens Photography</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+</head>
+<body>
+
+<!-- Bubble layer covering the whole page -->
+<div class="liquid-bubbles"></div>
+
+<!-- Navigation -->
+<nav class="nav">
+    <div class="logo">TwoLens</div>
+    <ul class="nav-links">
+        <li><a href="../new.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="works.html" class="active">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Portfolio Section -->
+<section class="portfolio-section">
+        <div class="hero-text">
+          <h1 style="font-size: 50px;">Our Works</h1>
+          <p style="padding-top: 20px;">Beautiful moments captured by TwoLens Photography</p>
+        </div>
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="weddings">Weddings</button>
+        <button class="filter-btn" data-category="portraits">Portraits</button>
+        <button class="filter-btn" data-category="events">Events</button>
+        <button class="filter-btn" data-category="nature">Nature</button>
+    </div>
+    <div class="portfolio-cards">
+        <div class="card wedding">
+            <img src="pics/1.jpg" alt="Wedding 1">
+            <div class="card-info">
+                <h3>Evening Glow</h3>
+                <p>Painted Sky</p><br>
+                <a href="gallery/index.html" data-lightbox="portfolio" class="view-btn">View</a>
+            </div>
+        </div>
+
+        <div class="card portrait">
+            <img src="pics/22.jpg" alt="Portrait 1">
+            <div class="card-info">
+                <h3>Tiny Paws</h3>
+                <p>Kitten</p><br>
+                <a href="pics/22.jpg" data-lightbox="portfolio" class="view-btn">View</a>
+            </div>
+        </div>
+
+        <div class="card event">
+            <img src="pics/4.jpg" alt="Event 1">
+            <div class="card-info">
+                <h3>Evening Glow</h3>
+                <p>Painted Sky</p><br>
+                <a href="pics/4.jpg" data-lightbox="portfolio" class="view-btn">View</a>
+            </div>
+        </div>
+
+        <div class="card nature">
+            <img src="pics/5.jpg" alt="Nature 1">
+            <div class="card-info">
+                <h3>Nature Shots</h3>
+                <p>Nature Photography</p><br>
+                <a href="../images/nature1.jpg" data-lightbox="portfolio" class="view-btn">View</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
+const bubbleContainer = document.querySelector('.liquid-bubbles');
+
+function createBubble() {
+    const bubble = document.createElement('span');
+    bubble.classList.add('bubble');
+
+    const size = Math.random() * 120 + 60; // 60–180px
+    bubble.style.width = size + 'px';
+    bubble.style.height = size + 'px';
+
+    bubble.style.left = Math.random() * 100 + '%';
+    bubble.style.animationDuration = (Math.random() * 5 + 8) + 's';
+    bubble.style.setProperty('--drift', (Math.random() * 120 - 60) + 'px');
+
+    bubbleContainer.appendChild(bubble);
+
+    setTimeout(() => bubble.remove(), 25000);
+}
+
+setInterval(createBubble, 1200);
+</script>
+<script src="js/works.js"></script>
+</body>
+</html>
